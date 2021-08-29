@@ -11,12 +11,21 @@ Si on suit la documentation de cette librairie, react est "une bibliothèque Jav
 
 Cette définition veut tout dire et rien dire en même temps. La question qu'il faut vraiment se poser c'est : `"Pourquoi utiliser React?"`. 
 
-La librairie permet de régler une problématique rencontrée quand on doit synchroniser notre état d'application et notre vue (l'interface) dans une application JS from scratch
+La librairie permet de régler une problématique rencontrée quand on doit synchroniser notre état d'application et notre vue (l'interface) dans une application JS from scratch.
 
+---
 
 ## Prérequis
 
-- être à l'aise avec Javascript
+- être à l'aise avec Javascript.
+- utiliser VSCode.
+
+optionnel :
+- installer l'extension Live Server (pour VSCode).
+
+---
+
+Pour commencer nous nous placerons sur la branche exo1 avec la commande `git checkout`.
 
 
 
