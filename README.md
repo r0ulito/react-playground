@@ -41,13 +41,19 @@ Libre à vous d'utilisez la méthode de votre choix, mais sachez que la correcti
 
 Comme dans l'exercice 3 le `lastName` sera affiché en rouge et en upperCase et le `firstName` avec la première lettre en upperCase.
 
----
 
 ### Bonus 
 
 Rajouter les fonctions de formatages dans chaque composants.
 
 Le faire avec les deux approches (Classes et Fonctions).
+
+---
+
+Pour passer à la suite vous devez commit vos changements puis checkout sur la branche exo5
+
+
+
 
 
 
