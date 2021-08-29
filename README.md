@@ -1,22 +1,17 @@
-# react-playground
+# Premiers pas avec React
 
-<img width="240px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1200px-React-icon.svg.png">
+## Énoncé 
 
-# Bienvenue sur ce module d'apprentissage pour React.
+A l'aide de la [documentation](https://fr.reactjs.org/docs/getting-started.html) de react nous allons utiliser les [liens CDN](https://fr.reactjs.org/docs/cdn-links.html) pour inclure la librairie dans la balise head d'un fichier nommé `index.html` avec la structure offerte par l'abbréviation `html:5` ou `!`. N'oubliez pas l'attribut `defer`.
 
+Nous allons ensuite créer un fichier `main.js` et l'inclure également dans la balise head, à la suite des liens CDN.
 
-## Qu'est ce que React ?
+La suite de l'exercice se passera dans ce fichier.
 
-Si on suit la documentation de cette librairie, react est "une bibliothèque JavaScript pour la construction d’interfaces utilisateur (UI)."
+Créons maintenant un titre de niveau 1 avec [React.createElement](https://fr.reactjs.org/docs/react-api.html#createelement) qui contiendra la String "Hello world!".
 
-Cette définition veut tout dire et rien dire en même temps. La question qu'il faut vraiment se poser c'est : `"Pourquoi utiliser React?"`. 
+Ensuite il faudra l'injecter dans le DOM grâce à [ReactDOM](https://fr.reactjs.org/docs/react-dom.html)
 
-La librairie permet de régler une problématique rencontrée quand on doit synchroniser notre état d'application et notre vue (l'interface) dans une application JS from scratch
+---
 
-
-## Prérequis
-
-- être à l'aise avec Javascript
-
-
-
+Pour passer à la suite vous devez commit vos changements puis checkout sur la branche exo2
