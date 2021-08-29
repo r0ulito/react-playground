@@ -5,7 +5,7 @@ const lastName = 'glandu';
 
 
 // Solution sans bonus
-//const helloWorld = <h1>Hello <span>{firstName[0].toUpperCase() + firstName.substr(1)}</span> <span className="red-text">{lastName.toUpperCase()}</span></h1>;
+const helloWorld = <h1>Hello <span>{firstName[0].toUpperCase() + firstName.substr(1)}</span> <span className="red-text">{lastName.toUpperCase()}</span></h1>;
 
 
 
