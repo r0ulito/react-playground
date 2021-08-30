@@ -46,7 +46,10 @@ En vous aidant de la documentation modifions ce code pour avoir un composant `Cl
 
 En nous appuyant sur la documentation, modifions le code d'exemple précédent pour en faire un `Class component`.
 
-Puis avec nos connaissances, modifions à nouveau ce code pour en faire un `Functional component`
+Puis avec nos connaissances, modifions à nouveau ce code pour en faire un `Functional component`.
+
+Indice : Nous allons avoir besoin de [useState](https://fr.reactjs.org/docs/hooks-reference.html#usestate) et de [useEffect](https://fr.reactjs.org/docs/hooks-reference.html#useeffect). Comme nous n'importons (pas encore) react, il faudra les utiliser comme ceci :
+`React.useState` || `React.useEffect`
 
 
 
