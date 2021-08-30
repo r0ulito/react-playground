@@ -32,6 +32,10 @@ Modifions le code de notre horloge pour afficher deux boutons qui permettront de
 
 Il nous faudra pour cela ajouter au `state` la couleur de base afin de pouvoir l'appliquer à l'élement `<h2>`
 
+### Bonus
+
+Modifions les boutons pour qu'ils arrêtent et re-synchronisent l'horloge
+
 ---
 
 Pour passer à la suite vous devez commit vos changements puis checkout sur la branche exo7
