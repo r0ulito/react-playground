@@ -28,7 +28,9 @@ return (
 
 ## Énoncé
 
-Modifions le code de notre horloge pour afficher un bouton qui permettra de colorer le texte de l'horloge dans une couleur aléatoire.
+Modifions le code de notre horloge pour afficher deux boutons qui permettront de colorer le texte de l'horloge dans une couleur aléatoire, et de réinitaliser la couleur à `black`
+
+Il nous faudra pour cela ajouter au `state` la couleur de base afin de pouvoir l'appliquer à l'élement `<h2>`
 
 ---
 
