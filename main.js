@@ -77,6 +77,10 @@ ReactDOM.render(<Clock />, document.querySelector('#app'));  */
 
 
 function Clock(props) {
+    React.useEffect(() => {
+        tick();        
+    }, []);
+    
     const [date, setDate] = React.useState(new Date());
 
     const tick = () => {
@@ -84,9 +88,7 @@ function Clock(props) {
             setDate(new Date())
         }, 1000)
     }
-    React.useEffect(() => {
-        tick();        
-    }, [])
+    
 
     return (
         <div>
