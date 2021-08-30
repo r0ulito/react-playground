@@ -28,9 +28,7 @@ return (
 
 ## Énoncé
 
-Modifions le code de notre horloge pour afficher un bouton qui permettra de la stopper, et un autre pour la resynchroniser quand elle est arrêtée.
-
-Nous allons donc créer deux nouveaux composants qui seront nos boutons. Ils seront à l'écoute sur l'événement `onClick` et déclencheront les instructions souhaitées. N'oubliez pas de prévenir le comportement par défaut.
+Modifions le code de notre horloge pour afficher un bouton qui permettra de colorer le texte de l'horloge dans une couleur aléatoire.
 
 ---
 
