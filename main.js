@@ -82,12 +82,11 @@ function Clock(props) {
     const tick = () => {
         setInterval(() => {
             setDate(new Date())
-        })
+        }, 1000)
     }
     React.useEffect(() => {
-        tick();
-        clearInterval(tick);
-    })
+        tick();        
+    }, [])
 
     return (
         <div>
