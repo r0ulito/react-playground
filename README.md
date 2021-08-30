@@ -1,56 +1,58 @@
-# [Nos premiers composants](https://fr.reactjs.org/docs/components-and-props.html#function-and-class-components)
+# [État et cycle de vie](https://fr.reactjs.org/docs/state-and-lifecycle.html)
 
-### Composants sous forme de fonctions
+### [Mettre à jour un élément affiché](https://fr.reactjs.org/docs/rendering-elements.html#updating-the-rendered-element)
 
-Ça reste le moyen le plus simple de définir un composant.
+Avec nos connaissances actuelles, la seule façon de mettre à jour l’interface utilisateur est de créer un nouvel élément et de le passer à `ReactDOM.render()`.
 
-```javascript
-    function Welcome(props) {
-        return <h1>Bonjour, {props.name}</h1>;
-    }
-```
-
----
-
-### Composants sous forme de classes
-
-Il est également possible d'utiliser une classe ES6 pour définir un composant.
+Prenons l'exemple de la documentation:
 
 ```javascript
-    class Welcome extends React.Component {
-        constructor(props) {
-            super(props);
-        }
-        render() {
-            return <h1>Bonjour, {this.props.name}</h1>;
-        }
+    function tick() {
+        const element = (
+            <div>
+            <h1>Hello World !</h1>
+            <h2>Il est {new Date().toLocaleTimeString()}.</h2>
+            </div>
+        );
+        ReactDOM.render(element, document.getElementById('root'));
     }
+    // Chaque seconde, nous appellons ReactDOM.render() depuis un callback passé à setInterval().
+    setInterval(tick, 1000);    
 ```
----
 
+En vous aidant de la documentation modifions ce code pour avoir un composant `Clock`.
+
+```javascript
+    function Clock(props) {
+        return (
+            <div>
+            <h1>Bonjour, monde !</h1>
+            <h2>Il est {props.date.toLocaleTimeString()}.</h2>
+            </div>
+        );
+        }
+
+        function tick() {
+        ReactDOM.render(
+            <Clock date={new Date()} />,
+            document.getElementById('root')
+        );
+    }
+    setInterval(tick, 1000);    
+
+```
 
 ## Énoncé
 
-Reprenons le code de l'exercice précédent.
-Nous allons ajouter deux nouveaux composants.
-L'un sera nommé `firstName`, l'autre `lastName`.
+En nous appuyant sur la documentation, modifions le code d'exemple précédent pour en faire un `Class component`.
 
-Ainsi nous allons remplacer nos deux `<span>` par leur composant respectif. 
-
-Libre à vous d'utilisez la méthode de votre choix, mais sachez que la correction sera faite avec des composants fonctionnels.
-
-Comme dans l'exercice 3 le `lastName` sera affiché en rouge et en upperCase et le `firstName` avec la première lettre en upperCase.
+Puis avec nos connaissances, modifions à nouveau ce code pour en faire un `Functional component`
 
 
-### Bonus 
-
-Rajouter les fonctions de formatages dans chaque composants.
-
-Le faire avec les deux approches (Classes et Fonctions).
 
 ---
 
-Pour passer à la suite vous devez commit vos changements puis checkout sur la branche exo5
+Pour passer à la suite vous devez commit vos changements puis checkout sur la branche exo6
 
 
 

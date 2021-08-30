@@ -13,7 +13,7 @@ function FirstName(props) {
     */
 
     // Solution sans bonus
-    return <span>{props.text}</span>
+    return <span>{props.text[0].toUpperCase() + props.text.substr(1)}</span>
 }
 
 function LastName(props) {
