@@ -12,3 +12,8 @@
     padding: 15px 20px;
     box-shadow: 3px 2px 5px teal;
 }
+
+label {
+    display: block;
+    margin-bottom: 20px;
+}
