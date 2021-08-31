@@ -135,6 +135,14 @@ class FlavorForm extends React.Component {
 }
 ```
 
+### Bonus
+
+Regroupez les 3 exemples en un seul formulaire 
+
+> Voir du côté de la gestion des [saisies multiples](https://fr.reactjs.org/docs/forms.html#handling-multiple-inputs)
+>
+><cite>Un professeur bienveillant</cite>
+
 
 ---
 
