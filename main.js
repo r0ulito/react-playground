@@ -34,6 +34,6 @@ function UserGreeting(props) {
   }
   
   ReactDOM.render(
-    <Greeting isLoggedIn={false} />,
+    <Greeting />,
     document.querySelector('#app')
   );
