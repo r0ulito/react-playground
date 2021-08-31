@@ -1,6 +1,6 @@
 function Clock(props) {
     React.useEffect(() => {
-        tick();        
+        tick();
     }, []);
     
     const [date, setDate] = React.useState(new Date());
@@ -8,8 +8,9 @@ function Clock(props) {
     const intervalRef = React.useRef();
     const tick = () => {
         intervalRef.current = setInterval(() => {
-            setDate(new Date())
+            setDate(new Date());
         }, 1000)
+        
     }
 
     const changeColor = () => {
