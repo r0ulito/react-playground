@@ -1,99 +1,75 @@
-# [Affichage conditionnel](https://fr.reactjs.org/docs/conditional-rendering.html)
+# [Listes et clés](https://fr.reactjs.org/docs/lists-and-keys.html)
 
-L’affichage conditionnel en React fonctionne de la même façon que les conditions en Javascript. On utilise l’instruction Javascript if ou l’opérateur ternaire pour créer des éléments représentant l’état courant, et on laisse React mettre à jour l’interface utilisateur (UI) pour qu’elle corresponde.
+### [Afficher plusieurs composants](https://fr.reactjs.org/docs/lists-and-keys.html#rendering-multiple-components)
 
-Considérons ces deux composants :
-```javascript
-function UserGreeting(props) {
-  return <h1>Bienvenue !</h1>;
-}
-
-function GuestGreeting(props) {
-  return <h1>Veuillez vous inscrire.</h1>;
-}
-```
-
-Nous allons créer un composant Greeting qui affiche un de ces deux composants, selon qu’un utilisateur est connecté ou non :
+Dans l'exercice 3, nous avons vu que nous pouvions utiliser n'importe quelle expression JavaScript valide au sein des accolades. On peut également construire des collections d’éléments et les [inclure dans du JSX](https://fr.reactjs.org/docs/introducing-jsx.html#embedding-expressions-in-jsx) de la même manière.
 
 ```javascript
-function Greeting(props) {
-  const isLoggedIn = props.isLoggedIn;
-  if (isLoggedIn) {
-    return <UserGreeting />;
-  }
-  return <GuestGreeting />;
-}
-
-ReactDOM.render(
-  // Essayez de changer ça vers isLoggedIn={true} :
-  <Greeting isLoggedIn={false} />,
-  document.getElementById('root')
+const numbers = [1, 2, 3, 4, 5];
+// En itérant sur le tableau on retourne un élement <li> pour chacune des entrées
+// et on assigne ses élements à la variables listItems
+const listItems = numbers.map((number) =>
+  <li>{number}</li>  
 );
+
+ //Puis on peut rendre nos élements comme ceci
+ ReactDOM.render(
+  <ul>{listItems}</ul>,
+  document.querySelector('#app')
+);
+
 ```
 
-[Condition avec l’opérateur logique &&](https://fr.reactjs.org/docs/conditional-rendering.html#inline-if-with-logical--operator)
+### [Les clés](https://fr.reactjs.org/docs/lists-and-keys.html#keys)
 
-Comme vu lors de l'exercice 3 nous pouvons au sein des accolades utiliser n'importe quelle expression JavaScript valide.
-
-Ce qui peut-être pratique pour afficher un élément suivant une condition:
+Si nous éxécutons le code précédent, nous verrons un warning dans la console nous disant qu'une `key` doit être fournie pour les élements d'une liste
 
 ```javascript
-function Mailbox(props) {
-  const unreadMessages = props.unreadMessages;
-  return (
-    <div>
-      <h1>Bonjour !</h1>
-      {unreadMessages.length > 0 &&
-        <h2>
-          Vous avez {unreadMessages.length} message(s) non-lu(s).
-        </h2>
-      }
-    </div>
-  );
-}
-
-const messages = ['React', 'Re: React', 'Re:Re: React'];
-ReactDOM.render(
-  <Mailbox unreadMessages={messages} />,
-  document.getElementById('root')
-);
+(
+<li key={number.toString()}>{number}</li>
+)
 ```
 
+Les clés aident React à identifier quels éléments d’une liste ont changés, ont été ajoutés ou supprimés. Vous devez donner une clé à chaque élément dans un tableau afin d’apporter aux éléments un identifiant unique **au sein d'une même liste**.
 
-Dans cet exemple nous voyons que l'élement `<h2>` n'est rendu dans le DOM que si la variable unreadMessages contient des valeurs.
+Les `keys` n'ont pas besoin d'être globalement uniques.
+
+⚠ On évitera d'utliser les index comme clé si l'ordre des éléments est susceptible de changer ⚠
+> [Index as a key is an anti-pattern](https://robinpokorny.medium.com/index-as-a-key-is-an-anti-pattern-e0349aece318)
+>
+> <cite>Robin Pokorny</cite>
+
 
 
 ## Énoncé
 
-En nous aidant de la documentation modifions le code d'exemple suivant:
+Nous allons faire notre première petite application !
 
-```javascript
-function UserGreeting(props) {
-  return <h1>Bienvenue !</h1>;
-}
+En utilisant l'api [{JSON} Placeholder](https://jsonplaceholder.typicode.com/) nous allons `fetch` l'url [`https://jsonplaceholder.typicode.com/users`](https://jsonplaceholder.typicode.com/users) afin d'obtenir un jeu de données d'utilisateurs.
 
-function GuestGreeting(props) {
-  return <h1>Veuillez vous inscrire.</h1>;
-}
-function Greeting(props) {
-  const isLoggedIn = props.isLoggedIn;
-  if (isLoggedIn) {
-    return <UserGreeting />;
-  }
-  return <GuestGreeting />;
-}
+Avec nos connaissances, nous allons afficher une "carte de visite" pour chaque utilisateur.
+Elle devra contenir :
+- nom
+- email
+- nom de la société
+- numéro de téléphone
+- site web
 
-ReactDOM.render(
-  <Greeting isLoggedIn={false} />,
-  document.getElementById('root')
-);
-```
-Nous allons faire en sorte d'utiliser une ternaire pour l'affichage conditionnel des composants `UserGreeting` et `GuestGreeting`. Et nous allons également ajouter un bouton qui nous permettra de changer la valeur de la prop `isLoggedIn` (mais rappelez-vous qu'elles sont en [lecture seule](https://fr.reactjs.org/docs/components-and-props.html#props-are-read-only), il faudra donc trouver un autre moyen)
+### Requis
+- Les composants doivent être écrit dans l'approche fonctionnelle
+- La `key` de chaque `User` sera la valeur de l'id dans l'objet JSON
 
+### Indices
+
+Il faudra nous assurer que les users sont bien présent avant de pouvoir afficher quoi que ce soit. Cherchons donc du côté du hook qui remplace `componentDidMount`, `componentDidUpdate` et `componentWillUnmount`
+
+Nous aurons également besoin du hook d'état
+
+Rappelez que pour l'instant nous utilisons React d'une manière peut conventionnelle ce qui fait que si nous voyons dans la documentation `useState` nous devons modifier par `React.useState`
 
 ---
 
-Pour passer à la suite vous devez commit vos changements puis checkout sur la branche exo8
+Pour passer à la suite vous devez commit vos changements puis checkout sur la branche exo9
 
 
 
