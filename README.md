@@ -10,7 +10,7 @@ Nous pouvons combiner ces deux concepts et utiliser l'état local de React pour 
 
 De cette manière le composant qui affiche le formulaire contrôle aussi son comportement par rapport aux saisies de l'utilisateur.
 
-Dans le cas où un champ de formulaire voit son état contrôlé par React est appelé un "*composant contrôlé*".
+Dans le cas où un champ de formulaire voit son état contrôlé par React est il est appelé un "*composant contrôlé*".
 
 
 --- 
