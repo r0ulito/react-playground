@@ -34,7 +34,8 @@ Il nous faudra pour cela ajouter au `state` la couleur de base afin de pouvoir l
 
 ### Bonus
 
-Modifions les boutons pour qu'ils arrêtent et re-synchronisent l'horloge
+Modifions les boutons pour qu'ils arrêtent et re-synchronisent l'horloge.
+Il faudra regarder du côté de [useRef](https://fr.reactjs.org/docs/hooks-reference.html#useref) pour pouvoir stocker une référence à notre setInterval.
 
 ---
 
