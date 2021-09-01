@@ -222,13 +222,29 @@ function FlavorForm(props) {
 
 
 function MultiForm(props) {
-    const [inputs, setInputs] = React.useState({value: "coconut"})
+    const [inputs, setInputs] = React.useState({
+        name: '',
+        text: '',
+        value: "coconut"
+    });
 
+    
+
+/*     
     const handleChange = React.useCallback(
         ({target: {name, value}}) => {
-            setInputs(state => ({...state, [name]: value}), [])
-        }
+            setInputs(state => ({...state, [name]: value}), []);
+            console.log(inputs);
+        },
+        [inputs]
     )
+
+ */
+
+    
+    const handleChange = ({target: {name, value}}) => {
+        setInputs(state => ({...state, [name]: value}), []);
+    }
 
     const handleSubmit = (e) => {
         e.preventDefault();
