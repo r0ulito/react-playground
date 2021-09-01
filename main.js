@@ -231,6 +231,10 @@ function MultiForm(props) {
     
 
 /*     
+
+    // useCallback n'est pas forcément le meilleur choix ici
+
+    
     const handleChange = React.useCallback(
         ({target: {name, value}}) => {
             setInputs(state => ({...state, [name]: value}), []);
