@@ -1,6 +1,6 @@
 
 // Partie 2
-function App(props) {
+/* function App(props) {
   const [base, setBase] = React.useState('none')
   const [decimal, setDecimal] = React.useState('');
   const [binary, setBinary] = React.useState('');
@@ -35,16 +35,92 @@ function App(props) {
         text="binaire" />
     </React.Fragment>
   )
+} */
+
+// Bonus
+
+function App(props) {
+  const [base, setBase] = React.useState('none')
+  const [decimal, setDecimal] = React.useState('');
+  const [convertedNumber, setConvertedNumber] = React.useState('');
+
+  React.useEffect(() => {
+    checkBaseAndConvertValue(decimal);
+  }, [base])
+
+  const checkBaseAndConvertValue = (value, baseFromInput = base) => {
+    switch(base) {
+      case "none":
+        setDecimal(value);
+        break;
+      case "binary":
+        setConvertedNumber(parseInt(value, 10).toString(2));
+        setDecimal(value);
+        break;
+      case "ternary":
+        setConvertedNumber(parseInt(value, 10).toString(3));
+        setDecimal(value);
+        break;
+      case "septenary":
+        setConvertedNumber(parseInt(value, 10).toString(7));
+        setDecimal(value);
+        break;
+      case "hexadecimal":
+        setConvertedNumber(parseInt(value, 10).toString(16));
+        setDecimal(value);
+        break;
+    }
+
+  }
+
+  const handleChange = (value, base) => {
+    checkBaseAndConvertValue(value, base);  
+  }
+
+  const handleSelect = (value) => {
+    setBase(value);
+    checkBaseAndConvertValue(decimal);
+  }
+
+
+  return(
+    <React.Fragment>
+      <BaseNumberInput 
+        number={decimal} 
+        onChangeBase={handleChange} 
+        base={base} 
+        text="decimal"  />
+      <SelectBaseInput selectedBase={base} onBaseSelect={handleSelect}/>
+      {base != 'none' ? <BaseNumberInput number={convertedNumber} base={base} text={base} OnChangeBase={null}/> : null}
+    </React.Fragment>
+  )
+}
+
+function SelectBaseInput({onBaseSelect, selectedBase}) {
+
+  const handleChange = ({target: {value}}) => {
+    onBaseSelect(value)
+  }
+
+
+  return(
+    <label>
+      <select value={selectedBase} onChange={handleChange}>
+        <option value="none">choisir une option</option>
+        <option value="binary">Binaire</option>
+        <option value="ternary">Ternaire</option>
+        <option value="septenary">Septénaire</option>
+        <option value="hexadecimal">Hexadécimal</option>
+      </select>
+    </label>
+  )
 }
 
 
 function BaseNumberInput({base, text, number, onChangeBase}) {
   const handleChange = ({target: {value}}) => {
     onChangeBase(value, base);
-    console.log(base);
-
   }
-
 
   return(
       <React.Fragment>
