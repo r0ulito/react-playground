@@ -45,7 +45,11 @@ Ce module a une approche orientée sur documentation. Et ce afin de vous habitue
 
 ---
 
-Pour commencer nous nous placerons sur la branche exo1 avec la commande `git checkout exo1`.
+## Pour commencer
+
+- Clonez ce repo avec la commande `git clone https://github.com/r0ulito/react-playground.git`
+
+- Placez sur la branche exo1 avec la commande `git checkout exo1`
 
 
 
