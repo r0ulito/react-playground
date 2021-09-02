@@ -17,15 +17,33 @@ La librairie permet de régler une problématique rencontrée quand on doit sync
 
 ## Prérequis
 
-- être à l'aise avec Javascript.
+- être à l'aise avec Javascript (ES6).
 - utiliser VSCode.
 
 optionnel :
 - installer l'extension Live Server (pour VSCode).
 
+<br>
+
 ---
 
-Pour commencer nous nous placerons sur la branche exo1 avec la commande `git checkout`.
+<br>
+
+
+## Comment utiliser ce repository
+
+Chaque exercice est sur une branche séparée. 
+A partir de l'exercice 2, vous obtenez la correction des exercices précédents
+
+> *Exemple:  La correction de l'exercice 3 se situe sur la branche exo4*
+
+Vous allez commit vos changements à chaque fin d'exercice, ce qui fait qu'a la fin du module vous aurez les corrections au bon endroit
+
+> *Exemple:  Je produis le code pour l'exercice 4 dans la branche exo4. Une fois terminé, je commit mes changements puis je checkout sur la branche exo5. Ma solution à l'exercice 4 sera sur la branche exo4. Vous pourrez comparer les deux grâce à* `git diff exo4..exo5 -- main.js`
+
+---
+
+Pour commencer nous nous placerons sur la branche exo1 avec la commande `git checkout exo1`.
 
 
 
