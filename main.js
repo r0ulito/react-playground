@@ -91,7 +91,7 @@ function App(props) {
         base={base} 
         text="decimal"  />
       <SelectBaseInput selectedBase={base} onBaseSelect={handleSelect}/>
-      {base != 'none' ? <BaseNumberInput number={convertedNumber} base={base} text={base} OnChangeBase={null}/> : null}
+      {base != 'none' && !isNaN(convertedNumber) ? <BaseNumberInput number={convertedNumber} base={base} text={base} OnChangeBase={null}/> : null}
     </React.Fragment>
   )
 }
