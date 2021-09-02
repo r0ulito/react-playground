@@ -36,51 +36,20 @@ Pour cela nous allons créer une application de gestion de liste de tâches à f
 
 - Un bouton permettra de supprimer tous les `Todo` qui sont complétés *(seulement si au moins un `Todo` est à l'état isCompleted = true)*
 
-Components:
-- App
-    
-    - TodoList
-        - TodoItem
-    - FiltersContainer
-
-
----
-State :
-
-- todos list
-- input
-- filter: [all, active, completed]
 
 
 
 ---
-event handling
 
-
-onKeyDown
-- escape to cancel
-- enter submit
-
-
-OnDoubleClick 
-- edit => double click on a todo
-> C'EST DE LA MERDE
+Nous sommes arrivés à la fin de ce module. Bravo à vous si vous vous êtes accrochés jusque-là. 
+>YOU'RE BREATHTAKING !
 >
-><cite>[V1DEV](https://github.com/Sata51) && [CYRIIL77](https://>github.com/cyrilmarceau)</cite>
+><cite>Keanu Reeves</cite>
 
+> OnDoubleClick C'EST D'LA MERDE
+>
+><cite>[V1dev](https://github.com/Sata51) && [Cyriil77](https://>github.com/cyrilmarceau)</cite>
 
-
---- actions
-
-- Delete all completed
-- Delete a todo
-- Create, Edit
-
-
-
----
-
-Pour passer à la suite vous devez commit vos changements puis checkout sur la branche exo13
 
 
 
