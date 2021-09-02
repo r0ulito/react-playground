@@ -13,8 +13,6 @@ Cette définition veut tout dire et rien dire en même temps. La question qu'il 
 
 La librairie permet de régler une problématique rencontrée quand on doit synchroniser notre état d'application et notre vue (l'interface) dans une application JS from scratch.
 
----
-
 ## Prérequis
 
 - être à l'aise avec Javascript (ES6).
@@ -23,11 +21,6 @@ La librairie permet de régler une problématique rencontrée quand on doit sync
 optionnel :
 - installer l'extension Live Server (pour VSCode).
 
-<br>
-
----
-
-<br>
 
 
 ## Comment utiliser ce repository
