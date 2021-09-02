@@ -31,7 +31,7 @@ Dans le composant `BaseNumberInput` l'attribut *(prop)* `onChangeBase` permettra
 
 // Dans App
 (
-<BaseNumberInput onChangeBase={(e) => handleChange(e)}>
+<BaseNumberInput onChangeBase={handleChange}>
 )
 
 // Dans BaseNumberInput
@@ -59,6 +59,14 @@ Nous utiliserons les bases:
 - hexadécimal
 
 Une fois la base sélectionnée le champ de saisie apparait et la conversion peut alors se faire
+
+
+### Indices
+
+La méthode `toString()` nous permettra de convertir facilement nos inputs dans les bases souhaitées. 
+⚠️La plupart des objets `JavaScript` surcharge la methode `toString()`. Celle dont nous aurons besoin sera celle de l'objet `Number` ⚠️
+
+<small>Peut-être que nous aurons également besoin de la méthode [`parseInt()`](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Global_Objects/parseInt)</small>
 
 
 
