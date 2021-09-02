@@ -39,7 +39,7 @@
 
 // Bonus
 
-function App(props) {
+function App() {
   const [base, setBase] = React.useState('none')
   const [decimal, setDecimal] = React.useState('');
   const [convertedNumber, setConvertedNumber] = React.useState('');
@@ -49,7 +49,7 @@ function App(props) {
   }, [base])
 
   const checkBaseAndConvertValue = (value, baseFromInput = base) => {
-    switch(base) {
+    switch(baseFromInput) {
       case "none":
         setDecimal(value);
         break;
