@@ -10,8 +10,10 @@ Pour cela nous allons créer une application de gestion de liste de tâches à f
 
         ```javascript
         let todo = {
+            id: 1
             title: 'ma super tâche',
-            isCompleted : false
+            isCompleted : false,
+            isEditing: false
         }
         ```
 
