@@ -4,8 +4,8 @@ export default function TodoFilter({OnFilterChange}) {
     return (
         <>
             <span onClick={() => OnFilterChange('all')}>All </span>
-            <span onClick={() => OnFilterChange(true)}>Completed </span>
-            <span onClick={() => OnFilterChange(false)}>Actives</span>
+            <span onClick={() => OnFilterChange('completed')}>Completed </span>
+            <span onClick={() => OnFilterChange('uncompleted')}>Actives</span>
         </>
     )
 }
