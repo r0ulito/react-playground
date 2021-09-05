@@ -39,6 +39,10 @@ Ce qui peut-être pratique pour afficher un élément suivant une condition:
 
 ```javascript
 function Mailbox(props) {
+    // Ici nous pourrions destructurer la prop pour éviter de passer par une variable tampon
+    /* function Mailbox({unreadMessages}) {
+        // Et nous aurions directement accès à unreadMessages
+    }*/
   const unreadMessages = props.unreadMessages;
   return (
     <div>
@@ -58,6 +62,8 @@ ReactDOM.render(
   document.getElementById('root')
 );
 ```
+
+[Destructuring on an object](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment#d%C3%A9composer_un_objet)
 
 
 Dans cet exemple nous voyons que l'élement `<h2>` n'est rendu dans le DOM que si la variable unreadMessages contient des valeurs.
