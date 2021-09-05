@@ -18,16 +18,14 @@ const App = () => {
   const [todoCounter, setTodoCounter] = useState(1);
 
   useEffect(() => {
-    console.log(filteredTodos);
-  }, [filteredTodos]);
+    if (currentFilter === "completed")
+      setFilteredTodos(todos.filter((todo) => todo.isCompleted));
+    if (currentFilter === "uncompleted")
+      setFilteredTodos(todos.filter((todo) => !todo.isCompleted));
+  }, [todos, currentFilter]);
 
   const handleInputChange = (value) => {
     setNewTodo(Object.assign({}, todoModel, { title: value }));
-    // setNewTodo({
-    //   id : todoCounter,
-    //   title: value,
-    //   isCompleted: false
-    // });
   };
 
   const changeTodoState = (todoId, isTodoCompleted) => {
@@ -39,16 +37,8 @@ const App = () => {
         return todo;
       })
     );
-
-    if (currentFilter !== "all") {
-      console.log(currentFilter);
-      setFilteredTodos((state) =>
-        state.filter((todo) => currentFilter === todo.isCompleted)
-      );
-    }
   };
   const changeTodoTitle = (todoId, value) => {
-    console.log(`id is: ${todoId}`, `value is: ${value}`);
     setTodos((state) =>
       state.map((todo) => {
         if (todo.id === todoId) {
@@ -84,20 +74,17 @@ const App = () => {
   };
 
   const deleteTodo = (todoId) => {
-    setTodos(todos.filter((todo) => todoId !== todo.id));
+    setTodos((state) => state.filter((todo) => todoId !== todo.id));
   };
 
   const handleInputKeyEvent = (key) => {
     if (key === "Enter") {
       if (newTodo.title !== "") {
-        console.log(`todoCounter is ${todoCounter}`);
         setTodoCounter((oldCounter) => {
           Object.assign(todoModel, { id: todoCounter + 1 });
           return oldCounter + 1;
         });
         setTodos((state) => [...state, newTodo]);
-
-        console.log(`newTodo is: ${JSON.stringify(newTodo)}`);
 
         setNewTodo(
           Object.assign({}, todoModel, { id: todoCounter, title: "" })
@@ -114,18 +101,17 @@ const App = () => {
   };
 
   const handleFilterChange = (filter) => {
-    console.log(filter);
     switch (filter) {
       case "all":
         setcurrentFilter("all");
         break;
       case "completed":
         setcurrentFilter(filter);
-        setFilteredTodos(todos.filter((todo) => true === todo.isCompleted));
+        setFilteredTodos(todos.filter((todo) => todo.isCompleted));
         break;
       case "uncompleted":
         setcurrentFilter(filter);
-        setFilteredTodos(todos.filter((todo) => false === todo.isCompleted));
+        setFilteredTodos(todos.filter((todo) => !todo.isCompleted));
         break;
       default:
         break;

@@ -1,7 +1,12 @@
 h1 {
-    color: red;
+  color: red;
 }
 
 .striked {
-    text-decoration: line-through;
+  text-decoration: line-through;
+}
+
+.fa-check-square, .fa-times, .fa-trash-alt {
+  margin: 0 10px ;
+  cursor: pointer;
 }
