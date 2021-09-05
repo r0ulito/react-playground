@@ -69,7 +69,7 @@ Ce bouton ne doit apparaitre que si au moins une des todos est complétée.
 
 ## Astuces
 
-⚠️ Vous n'êtes pas dans l'obligation de mettre un <button>bouton</button>.
+⚠️ Vous n'êtes pas dans l'obligation de mettre un <button>bouton</button>. ⚠️
 
 N'importe quel élément HTML qui écoute le clic permettra cette action.
 
