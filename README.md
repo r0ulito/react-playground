@@ -51,7 +51,7 @@ Nous allons implémenter la logique dans l'autre sens. C'est à dire que si nous
 
 ### Bonus
 
-Nous reprendrons le code fourni à la partie 2 et nous allons maintenant proposer un menu déroulant permettant de choisir la base dans laquelle nous voulons convertir une valeur décimale.
+En reprenant le code de la partie 2 et nous allons maintenant proposer un menu déroulant permettant de choisir la base dans laquelle nous voulons convertir une valeur décimale.
 Nous utiliserons les bases:
 - binaire
 - ternaire
