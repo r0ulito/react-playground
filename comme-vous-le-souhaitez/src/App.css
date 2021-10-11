@@ -1,3 +1,17 @@
+.striked {
+  text-decoration: line-through;
+}
+
+ button {
+  margin-left: 5px;
+  padding: 3px 5px;
+  margin-top: 5px;
+}
+
+.todo-item {
+  margin-top: 5px;
+}
+
 .App {
   text-align: center;
 }

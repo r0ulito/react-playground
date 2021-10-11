@@ -1,5 +1,5 @@
 import React from "react";
 
-export default function TodoInput() {
-  return <div></div>;
+export function TodoInput({ title, handleChange, handleKeyDown }) {
+  return <input type="text" value={title} onChange={({ target : { value }}) => handleChange(value)} onKeyDown={({ key }) => handleKeyDown(key)} />;
 }
