@@ -1,4 +1,4 @@
-const helloWorld = React.createElement('h1', {}, 'Hello world!');
+//const helloWorld = React.createElement('h1', {}, 'Hello world!');
 
 
 // mauvaise pratique
@@ -8,4 +8,12 @@ const helloWorld = React.createElement('h1', {}, 'Hello world!');
 
 // Meilleure pratique mais pas encore LA meilleure
 
-ReactDOM.render(helloWorld, document.querySelector('#app'));
+//ReactDOM.render(helloWorld, document.querySelector('#app'));
+
+
+const helloWorld = (
+        <h1>Hello World</h1>
+);
+
+
+ReactDOM.render(helloWorld, document.querySelector("#app"));
