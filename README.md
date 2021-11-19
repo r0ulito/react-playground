@@ -1,6 +1,6 @@
 # [Faire remonter l'état](https://fr.reactjs.org/docs/lifting-state-up.html)
 
-Assez souvent plusieurs composants ont besoin de reflétrer les mêmes données dynamiques. Il est conseillé de faire remonter l'état partagé dans leur ancêtre commun le plus proche. Nous allons voir comment cela fonctionne.
+Assez souvent plusieurs composants ont besoin de refléter les mêmes données dynamiques. Il est conseillé de faire remonter l'état partagé dans leur ancêtre commun le plus proche. Nous allons voir comment cela fonctionne.
 
 Lisons la documentation avant de passer à l'exercice (prenez 30 minutes et posez des questions)
 
