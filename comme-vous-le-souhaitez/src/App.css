@@ -2,6 +2,15 @@
   text-align: center;
 }
 
+
+.striked {
+  text-decoration: line-through;
+}
+
+.todo-item {
+  min-height: 90px;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
