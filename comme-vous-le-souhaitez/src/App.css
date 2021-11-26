@@ -36,3 +36,15 @@
     transform: rotate(360deg);
   }
 }
+
+.striked {
+  text-decoration: line-through;
+}
+
+button {
+  margin-left: 10px;
+}
+
+input[type="checkbox"] {
+  margin-right: 10px;
+}
