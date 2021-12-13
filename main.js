@@ -1,5 +1,5 @@
-const firstName = 'toto';
-const lastName = 'glandu';
+const firstName = 'r0ulito';
+const lastName = 'formateur';
 
 function FirstName(props) {
 
