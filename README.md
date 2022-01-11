@@ -23,7 +23,7 @@ un objet `newTodo` doit respecter le modèle suivant :
 
 ```javascript
     let newTodo = {
-        id: 1
+        id: 1,
         title: 'ma super tâche',
         isCompleted : false,
         isEditing: false
@@ -59,12 +59,12 @@ Il est évident que nous devrons travailler avec une nouvelle variable d'état q
 
 ### Partie 5
 
-Nous allons maintenant faire en sorte qu'en double cliquant sur le `title`d'un `TodoItem` on affiche un input qui nous permet d'éditer la valeur de ce `title`.
+Nous allons maintenant faire en sorte qu'en double cliquant sur le `title` d'un `TodoItem` on affiche un input qui nous permet d'éditer la valeur de ce `title`.
 Comme l'input précédant il devra écouter les événements de clavier afin de pouvoir valider la saisie avec la touche `Entrée`.
 
 ### Partie 6
 
-Nous allons maintenant implémenter le bouton qui permet de supprimer les `TodoItem`qui ont l'état `isCompleted === true`.
+Nous allons maintenant implémenter le bouton qui permet de supprimer les `TodoItem` qui ont l'état `isCompleted === true`.
 Ce bouton ne doit apparaitre que si au moins une des todos est complétée.
 
 ## Astuces

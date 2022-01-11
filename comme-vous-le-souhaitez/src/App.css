@@ -7,6 +7,18 @@
   pointer-events: none;
 }
 
+.striked {
+  text-decoration: line-through;
+}
+
+.todo-title {
+  margin: 0 15px
+}
+
+.todo-item {
+  line-height: 30px;
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
