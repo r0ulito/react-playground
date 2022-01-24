@@ -33,7 +33,7 @@ Il est également possible d'utiliser une classe ES6 pour définir un composant.
 
 Reprenons le code de l'exercice précédent.
 Nous allons ajouter deux nouveaux composants.
-L'un sera nommé `firstName`, l'autre `lastName`.
+L'un sera nommé `FirstName`, l'autre `LastName`.
 
 Ainsi nous allons remplacer nos deux `<span>` par leur composant respectif. 
 
