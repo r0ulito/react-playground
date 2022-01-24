@@ -15,8 +15,10 @@ La librairie permet de régler une problématique rencontrée quand on doit sync
 
 ## Prérequis
 
-- être à l'aise avec Javascript (ES6).
-- utiliser VSCode.
+- Être à l'aise avec Javascript (ES6).
+- Utiliser VSCode.
+- Avoir un compte github
+- Savoir utiliser les fonctions de base de git
 
 optionnel :
 - installer l'extension Live Server (pour VSCode).
