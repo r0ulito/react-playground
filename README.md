@@ -42,7 +42,7 @@ Ce module a une approche orientée sur documentation. Et ce afin de vous habitue
 
 ## Pour commencer
 
-- Clonez ce repo avec la commande `git clone https://github.com/r0ulito/react-playground.git`
+- Faites un fork de ce repo pour en avoir une "copie" sur votre github personnel
 
 - Placez sur la branche exo1 avec la commande `git checkout exo1`
 
