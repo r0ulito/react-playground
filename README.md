@@ -58,7 +58,7 @@ Nous utiliserons les bases:
 - septénaire
 - hexadécimal
 
-Une fois la base sélectionnée le champ de saisie apparait et la conversion peut alors se faire
+Une fois la base sélectionnée le champ apparait et il affiche le nombre décimal converti dans la base selectionnée
 
 
 ### Indices
