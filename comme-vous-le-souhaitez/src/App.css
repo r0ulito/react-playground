@@ -1,3 +1,12 @@
+.striked {
+  text-decoration: line-through;
+}
+
+.filter-button {
+  margin: 5px 10px;
+
+}
+
 .App {
   text-align: center;
 }
