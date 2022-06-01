@@ -7,6 +7,10 @@
 
 }
 
+.delete-button-container {
+  min-height: 5vh;
+}
+
 .App {
   text-align: center;
 }
