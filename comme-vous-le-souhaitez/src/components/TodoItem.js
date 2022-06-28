@@ -1,4 +1,13 @@
 import React from "react";
+import { useDispatch } from "react-redux";
+import {
+  deleteTodo,
+  changeTodoIsCompletedState,
+  changeTodoIsEditingState,
+  updateTodoTitle,
+  resetTodoTitle,
+  updateTodo,
+} from "../slices/todoSlice";
 
 export default function TodoItem({
   id,
@@ -6,34 +15,43 @@ export default function TodoItem({
   editTitle,
   isCompleted,
   isEditing,
-  handleTodosMapping,
-  handleTodoInputKeyDown,
-  handleTodoItemTitleChange,
-  handleTodoDeleting
 }) {
+  const dispatch = useDispatch();
+
+  const handleTodoInputKeyDown = (e, id) => {
+    if (e.key === "Escape") {
+      dispatch(resetTodoTitle({ id }));
+    }
+
+    if (e.key === "Enter") {
+      dispatch(updateTodo({ id }));
+    }
+  };
   return (
     <div className="todo-item">
       <input
         type="checkbox"
         checked={isCompleted}
-        onChange={() => handleTodosMapping(id, "isCompleted")}
+        onChange={() => dispatch(changeTodoIsCompletedState(id))}
       />
       {isEditing ? (
         <input
           type="text"
           value={editTitle}
           onKeyDown={(e) => handleTodoInputKeyDown(e, id)}
-          onChange={(e) => handleTodoItemTitleChange(e, id)}
+          onChange={(e) =>
+            dispatch(updateTodoTitle({ id, text: e.target.value }))
+          }
         />
       ) : (
         <span
           className={isCompleted ? "todo striked" : "todo"}
-          onDoubleClick={() => handleTodosMapping(id, "isEditing")}
+          onDoubleClick={() => dispatch(changeTodoIsEditingState(id))}
         >
           {title}
         </span>
       )}
-      <button onClick={() => handleTodoDeleting(id)}>X</button>
+      <button onClick={() => dispatch(deleteTodo(id))}>X</button>
     </div>
   );
 }

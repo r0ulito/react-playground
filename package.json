@@ -16,5 +16,9 @@
   "bugs": {
     "url": "https://github.com/r0ulito/react-playground/issues"
   },
-  "homepage": "https://github.com/r0ulito/react-playground#readme"
+  "homepage": "https://github.com/r0ulito/react-playground#readme",
+  "dependencies": {
+    "@reduxjs/toolkit": "^1.8.2",
+    "react-redux": "^8.0.2"
+  }
 }
