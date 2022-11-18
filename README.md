@@ -18,7 +18,7 @@ Faire remonter l'état implique une petite gymnastique mentale, qui nous force �
 
 ### Partie 1
 
-Nous allons créer notre deuxième "*petite*" application. Elle permettra de convertir une valeur décimal en valeur binaire.
+Nous allons créer notre deuxième "*petite*" application. Elle permettra de convertir une valeur décimale en valeur binaire.
 
 Nous allons donc créer deux composants `App` et `BaseNumberInput`.
 Le composant `App` devra rendre 2 composants `BaseNumberInput`
