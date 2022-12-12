@@ -1,5 +1,15 @@
-import React from "react";
+import React, { forwardRef } from "react";
 
-export default function TodoInput() {
-  return <div></div>;
-}
+const TodoInput = forwardRef(
+  ({ title, handleTitleChange, handleKeyDown }, ref) => (
+    <input
+      ref={ref}
+      type="text"
+      value={title}
+      onChange={(e) => handleTitleChange(e.target.value)}
+      onKeyDown={handleKeyDown}
+    />
+  )
+);
+
+export default TodoInput;

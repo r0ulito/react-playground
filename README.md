@@ -64,7 +64,7 @@ Comme l'input précédant il devra écouter les événements de clavier afin de 
 
 ### Partie 6
 
-Nous allons maintenant implémenter le bouton qui permet de supprimer les `TodoItem`qui ont l'état `isCompleted === true`.
+Nous allons maintenant implémenter le bouton qui permet de supprimer les `TodoItem` qui ont l'état `isCompleted === true`.
 Ce bouton ne doit apparaitre que si au moins une des todos est complétée.
 
 ## Astuces
