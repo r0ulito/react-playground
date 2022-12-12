@@ -15,29 +15,7 @@ let todoModel = {
 function App() {
   const [newTodo, setNewTodo] = useState(todoModel);
 
-  const [todos, setTodos] = useState([
-    {
-      id: 1,
-      title: "bonjour",
-      editTitle: "bonjour",
-      isCompleted: false,
-      isEditing: false,
-    },
-    {
-      id: 2,
-      title: "hello",
-      editTitle: "hello",
-      isCompleted: false,
-      isEditing: false,
-    },
-    {
-      id: 3,
-      title: "pouet",
-      editTitle: "pouet",
-      isCompleted: false,
-      isEditing: false,
-    },
-  ]);
+  const [todos, setTodos] = useState([]);
 
   const [filteredTodos, setFilteredTodos] = useState([]);
 
@@ -68,7 +46,7 @@ function App() {
 
   const handleKeyDown = (event) => {
     if (event.key === "Enter") {
-      if (newTodo.title === "") return;
+      if (newTodo.title.trim() === "") return;
       setTodos((prevState) => [...prevState, newTodo]);
       setNewTodo(Object.assign({}, todoModel, { id: ++todoModel.id }));
     }
@@ -79,15 +57,22 @@ function App() {
   };
 
   const toggleIsCompleted = (todoId) => {
-    setTodos((prevState) =>
-      prevState.map((item) => {
+    toggleToDoProperty(todoId, "isCompleted");
+  };
+  const changeTodoIsEditingState = (todoId) => {
+    toggleToDoProperty(todoId, "isEditing");
+  };
+
+  const toggleToDoProperty = (todoId, property) => {
+    setTodos((prevState) => [
+      ...prevState.map((item) => {
         if (item.id === todoId) {
-          return { ...item, isCompleted: !item.isCompleted };
-        } else {
-          return item;
+          return { ...item, [property]: !item[property] };
         }
-      })
-    );
+
+        return item;
+      }),
+    ]);
   };
 
   const deleteTodo = (todoId) => {
@@ -96,45 +81,37 @@ function App() {
     ]);
   };
 
-  const changeTodoIsEditingState = (todoId) => {
+  const handleKeyDownFromTodoInput = (key, todoId) => {
+    let todo = todos.find((item) => item.id === todoId);
+    if (key === "Escape") {
+      replaceTitle("editTitle", "title", todoId);
+    }
+
+    if (key === "Enter") {
+      if (todo.editTitle.trim() === "") return;
+      replaceTitle("title", "editTitle", todoId);
+    }
+  };
+
+
+  /**
+   * handle title switch between title and editTitle according to key pressed (Enter | Escape)
+   * @param {String} from the name of the property
+   * @param {String} to the name of the property
+   * @param {Number} todoId the todo's id
+   */
+
+  const replaceTitle = (from, to, todoId) => {
     setTodos((prevState) => [
       ...prevState.map((item) => {
         if (item.id === todoId) {
-          return { ...item, isEditing: !item.isEditing };
+          return { ...item, [from]: item[to] };
         }
 
         return item;
       }),
     ]);
-  };
-
-  const handleKeyDownFromTodoInput = (key, todoId) => {
-    console.log(key);
-    if (key === "Escape") {
-      setTodos((prevState) => [
-        ...prevState.map((item) => {
-          if (item.id === todoId) {
-            return { ...item, editTitle: item.title };
-          }
-
-          return item;
-        }),
-      ]);
-      changeTodoIsEditingState(todoId);
-    }
-
-    if (key === "Enter") {
-      setTodos((prevState) => [
-        ...prevState.map((item) => {
-          if (item.id === todoId) {
-            return { ...item, title: item.editTitle };
-          }
-
-          return item;
-        }),
-      ]);
-      changeTodoIsEditingState(todoId);
-    }
+    changeTodoIsEditingState(todoId);
   };
 
   const handleTitleChangeFromTodoInput = (event, todoId) => {
@@ -151,12 +128,8 @@ function App() {
   };
 
   const deleteAllCompleted = () => {
-
-    setTodos((prevState) => [
-      ...prevState.filter((item) => !item.isCompleted),
-    ]);
-        
-  }
+    setTodos((prevState) => [...prevState.filter((item) => !item.isCompleted)]);
+  };
 
   return (
     <div className="App">
