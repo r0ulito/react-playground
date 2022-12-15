@@ -1,29 +1,35 @@
 import React from "react";
 import TodoItem from "./TodoItem";
+import { useSelector, useDispatch } from "react-redux";
 
-export default function TodoList({
-  items,
-  toggleIsCompleted,
-  deleteTodo,
-  changeTodoIsEditingState,
-  handleKeyDownFromTodoInput,
-  handleTitleChangeFromTodoInput,
-  deleteAllCompleted,
-}) {
+import { deleteAllCompleted } from "../slices/todoSlice";
+
+export default function TodoList() {
+  const items = useSelector((state) => state.todos.data);
+  const filter = useSelector((state) => state.todos.filter);
+
+  const filteredItems = items.filter((item) => {
+    if(filter === true) {
+      return item.isCompleted;
+    }
+    if(filter === false) {
+      return !item.isCompleted;
+    }
+    return true;
+  });
+  
+  const dispatch = useDispatch();
   return (
     <>
-      {items.find((item) => item.isCompleted) && (
-        <button onClick={deleteAllCompleted}>Delete all Completed</button>
+      {filteredItems.find((item) => item.isCompleted) && (
+        <button onClick={() => dispatch(deleteAllCompleted())}>
+          Delete all Completed
+        </button>
       )}
-      {items.map((todo) => (
+      {filteredItems.map((todo) => (
         <TodoItem
           key={todo.id}
           {...todo}
-          toggleIsCompleted={toggleIsCompleted}
-          deleteTodo={deleteTodo}
-          changeTodoIsEditingState={changeTodoIsEditingState}
-          handleKeyDownFromTodoInput={handleKeyDownFromTodoInput}
-          handleTitleChangeFromTodoInput={handleTitleChangeFromTodoInput}
         />
       ))}
     </>

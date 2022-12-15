@@ -1,15 +1,29 @@
-import React, { forwardRef } from "react";
+import React from "react";
 
-const TodoInput = forwardRef(
-  ({ title, handleTitleChange, handleKeyDown }, ref) => (
+import { addTodo } from "../slices/todoSlice";
+import { useDispatch } from "react-redux";
+
+export default function TodoInput() {
+  const dispatch = useDispatch();
+
+  const handleKeyDown = (e) => {
+    console.log(e.key);
+
+    if (e.key === "Enter") {
+      if (!e.target.value) return;
+      dispatch(addTodo(e.target.value));
+      document.querySelector("#todo-input").value = "";
+    }
+
+    if (e.key === "Escape") {
+      document.querySelector("#todo-input").value = "";
+    }
+  };
+  return (
     <input
-      ref={ref}
       type="text"
-      value={title}
-      onChange={(e) => handleTitleChange(e.target.value)}
+      id="todo-input"
       onKeyDown={handleKeyDown}
     />
-  )
-);
-
-export default TodoInput;
+  );
+}
