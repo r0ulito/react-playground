@@ -23,7 +23,7 @@ un objet `newTodo` doit respecter le modèle suivant :
 
 ```javascript
     let newTodo = {
-        id: 1
+        id: 1,
         title: 'ma super tâche',
         isCompleted : false,
         isEditing: false
