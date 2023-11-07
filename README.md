@@ -20,7 +20,11 @@ Prenons l'exemple de la documentation:
     setInterval(tick, 1000);    
 ```
 
-En vous aidant de la documentation modifions ce code pour avoir un composant `Clock`.
+
+
+## Énoncé
+
+En nous appuyant sur la documentation, modifions le code suivant pour en faire un `Class component`.
 
 ```javascript
     function Clock(props) {
@@ -42,9 +46,7 @@ En vous aidant de la documentation modifions ce code pour avoir un composant `Cl
 
 ```
 
-## Énoncé
 
-En nous appuyant sur la documentation, modifions le code d'exemple précédent pour en faire un `Class component`.
 
 Puis avec nos connaissances, modifions à nouveau ce code pour en faire un `Functional component`.
 
@@ -56,11 +58,3 @@ Indice : Nous allons avoir besoin de [useState](https://fr.reactjs.org/docs/hook
 ---
 
 Pour passer à la suite vous devez commit vos changements puis checkout sur la branche exo6
-
-
-
-
-
-
-
-
